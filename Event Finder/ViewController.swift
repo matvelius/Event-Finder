@@ -8,7 +8,19 @@
 import UIKit
 import Nuke
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+//        Events.filteredEvents.removeAll(keepingCapacity: false)
+//
+//        let searchPredicate = NSPredicate(format: "SELF CONTAINS[c] %@", searchController.searchBar.text!)
+//        let array = (Events.filteredEvents as NSArray).filtered(using: searchPredicate)
+//        Events.filteredEvents = array as! [String]
+        Events.filteredEvents = searchController.searchBar.text!.isEmpty ? Events.allEvents : Events.allEvents.filter { $0.shortTitle.contains(searchController.searchBar.text!) }
+
+        self.tableView.reloadData()
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +31,38 @@ class ViewController: UITableViewController {
         self.fetchData(from: "https://api.seatgeek.com/2/events?client_id=\(Secrets.CLIENT_ID)&client_secret=\(Secrets.CLIENT_SECRET)", completion: { result in
             self.tableView.reloadData()
         })
+        
+//        setUpSearchBar()
+        
+        Events.searchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+//            controller.obscuresBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+
+            tableView.tableHeaderView = controller.searchBar
+
+            return controller
+        })()
+        
+        tableView.reloadData()
     }
     
     func setTableDataSourceAndDelegate() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    func setUpSearchBar() {
+        let searchBar = UISearchBar()
+        searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        searchBar.searchBarStyle = UISearchBar.Style.default
+        searchBar.placeholder = "Search"
+        searchBar.sizeToFit()
+        
+        tableView.tableHeaderView = searchBar
     }
 
     
@@ -36,12 +75,17 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Events.allEvents.count
+        if  (Events.searchController.isActive) {
+            return Events.filteredEvents.count
+          } else {
+              return Events.allEvents.count
+          }
+//        return Events.allEvents.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let currentEvent = Events.allEvents[indexPath.item]
+        let currentEvent = Events.searchController.isActive ? Events.filteredEvents[indexPath.item] : Events.allEvents[indexPath.item]
         let imageURL = URL(string: currentEvent.performers[0].image)
         
         // configure cell

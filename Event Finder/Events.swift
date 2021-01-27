@@ -9,6 +9,10 @@ import UIKit
 
 struct Events {
     static var allEvents = [Event]()
+    
+    // for searching:
+    static var filteredEvents = [Event]()
+    static var searchController = UISearchController()
 }
 
 // MARK: - RawResponse
