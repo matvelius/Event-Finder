@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C2ED8A16D6F611BADC12269 /* Pods_Event_FinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D70E5AD127905B1EF02A4BC /* Pods_Event_FinderTests.framework */; };
+		BA49E7FC25C2823F00DEBA6D /* FavoriteImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E7FB25C2823F00DEBA6D /* FavoriteImageNames.swift */; };
 		BA6A784225BCFABA00E0D13F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A784125BCFABA00E0D13F /* AppDelegate.swift */; };
 		BA6A784425BCFABA00E0D13F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A784325BCFABA00E0D13F /* SceneDelegate.swift */; };
 		BA6A784625BCFABA00E0D13F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A784525BCFABA00E0D13F /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		81F08D2AA5BCB73C4E48F462 /* Pods_Event_Finder_Event_FinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_Finder_Event_FinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D70E5AD127905B1EF02A4BC /* Pods_Event_FinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_FinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90AFB7DAAFDC917287625E70 /* Pods-Event Finder-Event FinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event Finder-Event FinderUITests.release.xcconfig"; path = "Target Support Files/Pods-Event Finder-Event FinderUITests/Pods-Event Finder-Event FinderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BA49E7FB25C2823F00DEBA6D /* FavoriteImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteImageNames.swift; sourceTree = "<group>"; };
 		BA6A783E25BCFABA00E0D13F /* Event Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Event Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6A784125BCFABA00E0D13F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6A784325BCFABA00E0D13F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				BA6A784525BCFABA00E0D13F /* ViewController.swift */,
 				BA6A784725BCFABA00E0D13F /* Main.storyboard */,
 				BA88D33D25C22DC0004BC60F /* DetailViewController.swift */,
+				BA49E7FB25C2823F00DEBA6D /* FavoriteImageNames.swift */,
 				BA6A788225BE387E00E0D13F /* Events.swift */,
 				BAEDA6CB25BFA20000EC1E5A /* API.swift */,
 				BA6A787D25BCFDED00E0D13F /* EventCell.swift */,
@@ -424,6 +427,7 @@
 				BAEDA6D125C0A92B00EC1E5A /* Secrets.swift in Sources */,
 				BA6A784225BCFABA00E0D13F /* AppDelegate.swift in Sources */,
 				BA6A784425BCFABA00E0D13F /* SceneDelegate.swift in Sources */,
+				BA49E7FC25C2823F00DEBA6D /* FavoriteImageNames.swift in Sources */,
 				BAEDA6CC25BFA20000EC1E5A /* API.swift in Sources */,
 				BA6A788325BE387E00E0D13F /* Events.swift in Sources */,
 				BA88D33E25C22DC0004BC60F /* DetailViewController.swift in Sources */,

@@ -16,16 +16,36 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var eventDateTimeLabel: UILabel!
     @IBOutlet weak var eventLocationLabel: UILabel!
     
+    @IBOutlet weak var favoriteButton: UIButton!
     
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+
+        if favoriteButtonImageName == .favoriteBlank { // mark event as favorite
+            
+            if event != nil { addEventToFavorites(eventID: event!.id) }
+            sender.setImage(UIImage(named: FavoriteImage.favorite.rawValue), for: .normal)
+            favoriteButtonImageName = .favorite
+            
+        } else { // unmark favorite
+            
+            if event != nil { removeEventFromFavorites(eventID: event!.id) }
+            sender.setImage(UIImage(named: FavoriteImage.favoriteBlank.rawValue), for: .normal)
+            favoriteButtonImageName = .favoriteBlank
+            
+        }
+
+    }
+        
     var event: Event?
     var eventTitle: String?
+    
+    var favoriteButtonImageName = FavoriteImage.favoriteBlank
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
         if event == nil { return }
         
         if let imageURL = URL(string: event!.performers[0].image) {
@@ -35,7 +55,15 @@ class DetailViewController: UIViewController {
         eventTitleLabel.text = event!.shortTitle
         eventDateTimeLabel.text = getLocalDateTime(from: event!.datetimeUTC) ?? "n/a"
         eventLocationLabel.text = event!.venue.displayLocation
+        
+        favoriteButtonImageName = Events.isEventFavorite(event!.id) ? FavoriteImage.favorite : FavoriteImage.favoriteBlank
+        
+        favoriteButton.setImage(UIImage(named: favoriteButtonImageName.rawValue), for: .normal)
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        parent.reloadData()
+//    }
 }
 
 extension DetailViewController {
@@ -52,5 +80,34 @@ extension DetailViewController {
         
         return dateFormatter.string(from: date)
     }
-
+    
+    func addEventToFavorites(eventID: Int) {
+        
+        if !Events.isEventFavorite(eventID) {
+            let defaults = UserDefaults.standard
+            
+            if var favoriteEvents: [Int] = defaults.object(forKey: "favoriteEvents") as? [Int] {
+                favoriteEvents.append(eventID)
+                defaults.setValue(favoriteEvents, forKey: "favoriteEvents")
+            }
+        }
+        
+    }
+    
+    func removeEventFromFavorites(eventID: Int) {
+        
+        if Events.isEventFavorite(eventID) {
+            let defaults = UserDefaults.standard
+            
+            if let favoriteEvents: [Int] = defaults.object(forKey: "favoriteEvents") as? [Int] {
+                defaults.setValue(favoriteEvents.filter { $0 != eventID }, forKey: "favoriteEvents")
+            }
+            
+            print("removed element \(eventID) from favorites")
+            print("favorites are now: \(defaults.object(forKey: "favoriteEvents"))")
+        }
+        
+    }
+    
+    
 }

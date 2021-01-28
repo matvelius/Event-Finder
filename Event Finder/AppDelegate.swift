@@ -14,6 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // if this is the first load ever, create an array to store user's favorite events
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: "favoriteEvents") == nil {
+            defaults.setValue([Int](), forKey: "favoriteEvents")
+        }
+        
         return true
     }
 

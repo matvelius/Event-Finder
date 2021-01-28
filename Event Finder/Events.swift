@@ -13,6 +13,20 @@ struct Events {
     // for searching:
     static var filteredEvents = [Event]()
     static var searchController = UISearchController()
+    
+    // for keeping track of favorites:
+    static func isEventFavorite(_ eventID: Int) -> Bool {
+        let defaults = UserDefaults.standard
+        
+        if let favoriteEvents: [Int] = defaults.object(forKey: "favoriteEvents") as? [Int] {
+            if favoriteEvents.contains(eventID) {
+                return true
+            }
+        }
+        
+        return false
+    }
+
 }
 
 // MARK: - RawResponse
