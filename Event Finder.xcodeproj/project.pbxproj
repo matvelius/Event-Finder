@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1C2ED8A16D6F611BADC12269 /* Pods_Event_FinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D70E5AD127905B1EF02A4BC /* Pods_Event_FinderTests.framework */; };
-		8239EE5990E729417C71D6DD /* Pods_Event_Finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67431BF60613894358C4879B /* Pods_Event_Finder.framework */; };
 		BA6A784225BCFABA00E0D13F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A784125BCFABA00E0D13F /* AppDelegate.swift */; };
 		BA6A784425BCFABA00E0D13F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A784325BCFABA00E0D13F /* SceneDelegate.swift */; };
 		BA6A784625BCFABA00E0D13F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A784525BCFABA00E0D13F /* ViewController.swift */; };
@@ -19,6 +18,7 @@
 		BA6A786425BCFABB00E0D13F /* Event_FinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A786325BCFABB00E0D13F /* Event_FinderUITests.swift */; };
 		BA6A787E25BCFDED00E0D13F /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A787D25BCFDED00E0D13F /* EventCell.swift */; };
 		BA6A788325BE387E00E0D13F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A788225BE387E00E0D13F /* Events.swift */; };
+		BA88D33E25C22DC0004BC60F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88D33D25C22DC0004BC60F /* DetailViewController.swift */; };
 		BAEDA6CC25BFA20000EC1E5A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6CB25BFA20000EC1E5A /* API.swift */; };
 		BAEDA6D125C0A92B00EC1E5A /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6D025C0A92B00EC1E5A /* Secrets.swift */; };
 		CC611FF3B23B75E46B6B0F0F /* Pods_Event_Finder_Event_FinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F08D2AA5BCB73C4E48F462 /* Pods_Event_Finder_Event_FinderUITests.framework */; };
@@ -67,6 +67,7 @@
 		BA6A786525BCFABB00E0D13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA6A787D25BCFDED00E0D13F /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		BA6A788225BE387E00E0D13F /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		BA88D33D25C22DC0004BC60F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BAEDA6CB25BFA20000EC1E5A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BAEDA6D025C0A92B00EC1E5A /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8239EE5990E729417C71D6DD /* Pods_Event_Finder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +119,6 @@
 				1EFBBBE5F7BB0BDDA3A60C0F /* Pods-Event FinderTests.debug.xcconfig */,
 				018110A7CA77FB0B81F50C25 /* Pods-Event FinderTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,6 +151,7 @@
 				BA6A784325BCFABA00E0D13F /* SceneDelegate.swift */,
 				BA6A784525BCFABA00E0D13F /* ViewController.swift */,
 				BA6A784725BCFABA00E0D13F /* Main.storyboard */,
+				BA88D33D25C22DC0004BC60F /* DetailViewController.swift */,
 				BA6A788225BE387E00E0D13F /* Events.swift */,
 				BAEDA6CB25BFA20000EC1E5A /* API.swift */,
 				BA6A787D25BCFDED00E0D13F /* EventCell.swift */,
@@ -426,6 +426,7 @@
 				BA6A784425BCFABA00E0D13F /* SceneDelegate.swift in Sources */,
 				BAEDA6CC25BFA20000EC1E5A /* API.swift in Sources */,
 				BA6A788325BE387E00E0D13F /* Events.swift in Sources */,
+				BA88D33E25C22DC0004BC60F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
