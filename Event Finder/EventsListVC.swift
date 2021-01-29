@@ -8,7 +8,7 @@
 import UIKit
 import Nuke
 
-class ViewController: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
+class EventsListVC: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         Events.filteredEvents = searchController.searchBar.text!.isEmpty ? Events.allEvents : Events.allEvents.filter { $0.shortTitle.contains(searchController.searchBar.text!) }
@@ -30,20 +30,7 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
             }
         })
         
-        //        setUpSearchBar()
-        
-        Events.searchController = ({
-            let controller = UISearchController(searchResultsController: nil)
-            controller.searchResultsUpdater = self
-            controller.obscuresBackgroundDuringPresentation = false
-            controller.searchBar.sizeToFit()
-            
-            tableView.tableHeaderView = controller.searchBar
-            
-            return controller
-        })()
-        
-        tableView.reloadData()
+        setUpSearchBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,17 +44,18 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
         tableView.delegate = self
     }
     
-    //    func setUpSearchBar() {
-    //        let searchBar = UISearchBar()
-    //        searchBar.frame = CGRect(x: 0, y: 0, width: 200, height: 70)
-    //        searchBar.delegate = self
-    //        searchBar.showsCancelButton = true
-    //        searchBar.searchBarStyle = UISearchBar.Style.default
-    //        searchBar.placeholder = "Search"
-    //        searchBar.sizeToFit()
-    //
-    //        tableView.tableHeaderView = searchBar
-    //    }
+    func setUpSearchBar() {
+        Events.searchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.obscuresBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+            
+            tableView.tableHeaderView = controller.searchBar
+            
+            return controller
+        })()
+    }
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -110,10 +98,11 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "EventDetailVC") as? EventDetailVC
         
         let currentEvent = Events.searchController.isActive ? Events.filteredEvents[indexPath.row] : Events.allEvents[indexPath.row]
-        
+
         detailVC?.event = currentEvent
         
         detailVC?.eventTitle = currentEvent.shortTitle
@@ -124,7 +113,7 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
 }
 
 
-extension ViewController {
+extension EventsListVC {
     
     func getDate(from dateTimeString: String) -> String? {
         let dateFormatter = DateFormatter()

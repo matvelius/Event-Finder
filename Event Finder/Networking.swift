@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension ViewController {
+extension EventsListVC {
     
     func fetchData(from urlString: String, completion: @escaping (Result<String, NetworkError>) -> Void) {
         // check the URL is good, otherwise return failure

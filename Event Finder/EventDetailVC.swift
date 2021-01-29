@@ -8,7 +8,7 @@
 import UIKit
 import Nuke
 
-class DetailViewController: UIViewController {
+class EventDetailVC: UIViewController {
     
 
     @IBOutlet weak var eventTitleLabel: UILabel!
@@ -57,12 +57,15 @@ class DetailViewController: UIViewController {
         eventLocationLabel.text = event!.venue.displayLocation
         
         favoriteButtonImageName = Events.isEventFavorite(event!.id) ? FavoriteImage.favorite : FavoriteImage.favoriteBlank
-        
         favoriteButton.setImage(UIImage(named: favoriteButtonImageName.rawValue), for: .normal)
+        
+        DispatchQueue.main.async {
+            Events.searchController.isActive = false
+        }
     }
 }
 
-extension DetailViewController {
+extension EventDetailVC {
     
     func getLocalDateTime(from dateTimeString: String) -> String? {
         let dateFormatter = DateFormatter()
