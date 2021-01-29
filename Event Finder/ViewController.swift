@@ -13,7 +13,9 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
     func updateSearchResults(for searchController: UISearchController) {
         Events.filteredEvents = searchController.searchBar.text!.isEmpty ? Events.allEvents : Events.allEvents.filter { $0.shortTitle.contains(searchController.searchBar.text!) }
         
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     
@@ -23,7 +25,9 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
         setTableDataSourceAndDelegate()
         
         self.fetchData(from: "https://api.seatgeek.com/2/events?client_id=\(Secrets.CLIENT_ID)&client_secret=\(Secrets.CLIENT_SECRET)", completion: { result in
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         })
         
         //        setUpSearchBar()
@@ -43,8 +47,9 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("viewWillAppear")
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func setTableDataSourceAndDelegate() {
@@ -96,14 +101,9 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
         
         // favorite icon
         if Events.isEventFavorite(currentEvent.id) {
-            let favoriteIconView = UIImageView.init(image: UIImage(named: FavoriteImage.favorite.rawValue))
-            cell.addSubview(favoriteIconView)
-            
-            favoriteIconView.transform = CGAffineTransform( translationX: 8.0, y: 11.0 )
-            favoriteIconView.layer.shadowColor = UIColor.white.cgColor
-            favoriteIconView.layer.shadowOpacity = 1
-            favoriteIconView.layer.shadowOffset = CGSize(width: 1, height: 1)
-            favoriteIconView.layer.shadowRadius = 2
+            cell.favoriteIcon.image = UIImage(named: FavoriteImage.favorite.rawValue)
+        } else {
+            cell.favoriteIcon.image = nil
         }
         
         return cell
@@ -117,7 +117,7 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchResult
         detailVC?.event = currentEvent
         
         detailVC?.eventTitle = currentEvent.shortTitle
-        
+                
         self.navigationController?.pushViewController(detailVC!, animated: true)
     }
     
@@ -151,10 +151,4 @@ extension ViewController {
         
         return dateFormatter.string(from: date)
     }
-    
-    override func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
-        print("unwind segue triggered!")
-        tableView.reloadData()
-    }
-    
 }

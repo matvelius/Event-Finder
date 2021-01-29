@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
     var eventTitle: String?
     
     var favoriteButtonImageName = FavoriteImage.favoriteBlank
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -60,10 +60,6 @@ class DetailViewController: UIViewController {
         
         favoriteButton.setImage(UIImage(named: favoriteButtonImageName.rawValue), for: .normal)
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        parent.reloadData()
-//    }
 }
 
 extension DetailViewController {
@@ -103,11 +99,8 @@ extension DetailViewController {
                 defaults.setValue(favoriteEvents.filter { $0 != eventID }, forKey: "favoriteEvents")
             }
             
-            print("removed element \(eventID) from favorites")
-            print("favorites are now: \(defaults.object(forKey: "favoriteEvents"))")
         }
         
     }
-    
     
 }

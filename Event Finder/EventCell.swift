@@ -13,4 +13,5 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var favoriteIcon: UIImageView!
 }
