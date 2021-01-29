@@ -22,13 +22,13 @@ class EventDetailVC: UIViewController {
 
         if favoriteButtonImageName == .favoriteBlank { // mark event as favorite
             
-            if event != nil { addEventToFavorites(eventID: event!.id) }
+            if event != nil { Events.addEventToFavorites(eventID: event!.id) }
             sender.setImage(UIImage(named: FavoriteImage.favorite.rawValue), for: .normal)
             favoriteButtonImageName = .favorite
             
         } else { // unmark favorite
             
-            if event != nil { removeEventFromFavorites(eventID: event!.id) }
+            if event != nil { Events.removeEventFromFavorites(eventID: event!.id) }
             sender.setImage(UIImage(named: FavoriteImage.favoriteBlank.rawValue), for: .normal)
             favoriteButtonImageName = .favoriteBlank
             
@@ -47,7 +47,10 @@ class EventDetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if event == nil { return }
-        
+        setupView()
+    }
+    
+    func setupView() {
         if let imageURL = URL(string: event!.performers[0].image) {
             Nuke.loadImage(with: imageURL, into: self.eventImage)
         }
@@ -78,32 +81,6 @@ extension EventDetailVC {
         dateFormatter.dateFormat = "EEEE, dd MMM YYYY @ h:mm a"
         
         return dateFormatter.string(from: date)
-    }
-    
-    func addEventToFavorites(eventID: Int) {
-        
-        if !Events.isEventFavorite(eventID) {
-            let defaults = UserDefaults.standard
-            
-            if var favoriteEvents: [Int] = defaults.object(forKey: "favoriteEvents") as? [Int] {
-                favoriteEvents.append(eventID)
-                defaults.setValue(favoriteEvents, forKey: "favoriteEvents")
-            }
-        }
-        
-    }
-    
-    func removeEventFromFavorites(eventID: Int) {
-        
-        if Events.isEventFavorite(eventID) {
-            let defaults = UserDefaults.standard
-            
-            if let favoriteEvents: [Int] = defaults.object(forKey: "favoriteEvents") as? [Int] {
-                defaults.setValue(favoriteEvents.filter { $0 != eventID }, forKey: "favoriteEvents")
-            }
-            
-        }
-        
     }
     
 }

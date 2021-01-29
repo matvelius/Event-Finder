@@ -26,6 +26,32 @@ struct Events {
         
         return false
     }
+    
+    static func addEventToFavorites(eventID: Int) {
+        
+        if !isEventFavorite(eventID) {
+            let defaults = UserDefaults.standard
+            
+            if var favoriteEvents: [Int] = defaults.object(forKey: "favoriteEvents") as? [Int] {
+                favoriteEvents.append(eventID)
+                defaults.setValue(favoriteEvents, forKey: "favoriteEvents")
+            }
+        }
+        
+    }
+    
+    static func removeEventFromFavorites(eventID: Int) {
+        
+        if isEventFavorite(eventID) {
+            let defaults = UserDefaults.standard
+            
+            if let favoriteEvents: [Int] = defaults.object(forKey: "favoriteEvents") as? [Int] {
+                defaults.setValue(favoriteEvents.filter { $0 != eventID }, forKey: "favoriteEvents")
+            }
+            
+        }
+        
+    }
 
 }
 

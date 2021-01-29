@@ -8,31 +8,50 @@
 import XCTest
 @testable import Event_Finder
 
-class Event_FinderTests: XCTestCase {
+class NetworkTests: XCTestCase {
+    
+    func testAPICall() {
+        let exp = expectation(description: "download data from SeatGeek API")
+        
+        guard let url = URL(string: "https://api.seatgeek.com/2/events?client_id=\(Secrets.CLIENT_ID)&client_secret=\(Secrets.CLIENT_SECRET)") else {
+            return
+        }
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    // success: convert the data to a string and send it back
+                    let stringData = String(decoding: data, as: UTF8.self)
+                    let rawResponse: RawResponse = try! JSONDecoder().decode(RawResponse.self, from: stringData.data(using: .utf8)!)
+                    
+                    Events.allEvents = rawResponse.events
+                    
+                    XCTAssert(Events.allEvents.count > 0)
+                    exp.fulfill()
+                }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        }.resume()
+        
+        wait(for: [exp], timeout: 10.0)
     }
     
-    func testAllEventsLoaded() {
-        let events = Events()
-        XCTAssertEqual(events.allEvents.count, 0, "allEvents must be 0")
+}
+
+class FavoriteEventTests: XCTestCase {
+    
+    func testAddingEventToFavorites() {
+        let unlikelyEventID = -1
+        Events.addEventToFavorites(eventID: unlikelyEventID)
+        
+        XCTAssertTrue(Events.isEventFavorite(unlikelyEventID))
+        
+        Events.removeEventFromFavorites(eventID: unlikelyEventID)
     }
-
-//    func testExample() throws {
-//        // This is an example of a functional test case.
-//        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//    }
-//
-//    func testPerformanceExample() throws {
-//        // This is an example of a performance test case.
-//        self.measure {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
-
+    
+    func testRemovingEventFromFavorites() {
+        let unlikelyEventID = -1
+        Events.addEventToFavorites(eventID: unlikelyEventID)
+        Events.removeEventFromFavorites(eventID: unlikelyEventID)
+        XCTAssertFalse(Events.isEventFavorite(unlikelyEventID))
+    }
+    
 }
