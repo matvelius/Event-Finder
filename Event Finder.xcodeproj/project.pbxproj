@@ -152,9 +152,11 @@
 				BA6A784125BCFABA00E0D13F /* AppDelegate.swift */,
 				BA6A784325BCFABA00E0D13F /* SceneDelegate.swift */,
 				BA6AF55C25C3AF0100631B4E /* Model */,
+				BAC0B6E525C4E8B900E3E828 /* View Model */,
 				BA6AF56D25C3B21A00631B4E /* Services */,
 				BA6AF56625C3B14700631B4E /* View Controllers */,
 				BA6A784725BCFABA00E0D13F /* Main.storyboard */,
+				BA6A787D25BCFDED00E0D13F /* EventCell.swift */,
 				BA6A784A25BCFABB00E0D13F /* Assets.xcassets */,
 				BA6A784C25BCFABB00E0D13F /* LaunchScreen.storyboard */,
 				BA6A784F25BCFABB00E0D13F /* Info.plist */,
@@ -184,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				BA6A788225BE387E00E0D13F /* Events.swift */,
-				BA6A787D25BCFDED00E0D13F /* EventCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -206,6 +207,13 @@
 				BAEDA6D025C0A92B00EC1E5A /* Secrets.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		BAC0B6E525C4E8B900E3E828 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

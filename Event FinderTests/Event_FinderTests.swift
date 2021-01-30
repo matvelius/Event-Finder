@@ -10,7 +10,12 @@ import XCTest
 
 class NetworkTests: XCTestCase {
     
-    func testAPICall() {
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = false
+    }
+    
+    func testAPICallReturnsData() {
         let exp = expectation(description: "download data from SeatGeek API")
         
         guard let url = URL(string: "https://api.seatgeek.com/2/events?client_id=\(Secrets.CLIENT_ID)&client_secret=\(Secrets.CLIENT_SECRET)") else {
@@ -18,16 +23,16 @@ class NetworkTests: XCTestCase {
         }
 
         URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data {
-                    // success: convert the data to a string and send it back
-                    let stringData = String(decoding: data, as: UTF8.self)
-                    let rawResponse: RawResponse = try! JSONDecoder().decode(RawResponse.self, from: stringData.data(using: .utf8)!)
-                    
-                    Events.allEvents = rawResponse.events
-                    
-                    XCTAssert(Events.allEvents.count > 0)
-                    exp.fulfill()
-                }
+            if let data = data {
+                // success: convert the data to a string and send it back
+                let stringData = String(decoding: data, as: UTF8.self)
+                let rawResponse: RawResponse = try! JSONDecoder().decode(RawResponse.self, from: stringData.data(using: .utf8)!)
+                
+                Events.allEvents = rawResponse.events
+                
+                XCTAssert(Events.allEvents.count > 0)
+                exp.fulfill()
+            }
 
         }.resume()
         
@@ -38,19 +43,30 @@ class NetworkTests: XCTestCase {
 
 class FavoriteEventTests: XCTestCase {
     
+    override func setUp() {
+        super.setUp()
+        continueAfterFailure = false
+    }
+    
     func testAddingEventToFavorites() {
         let unlikelyEventID = -1
+        
         Events.addEventToFavorites(eventID: unlikelyEventID)
         
         XCTAssertTrue(Events.isEventFavorite(unlikelyEventID))
         
-        Events.removeEventFromFavorites(eventID: unlikelyEventID)
+        addTeardownBlock {
+            Events.removeEventFromFavorites(eventID: unlikelyEventID)
+        }
     }
     
     func testRemovingEventFromFavorites() {
         let unlikelyEventID = -1
+        
         Events.addEventToFavorites(eventID: unlikelyEventID)
+        
         Events.removeEventFromFavorites(eventID: unlikelyEventID)
+        
         XCTAssertFalse(Events.isEventFavorite(unlikelyEventID))
     }
     

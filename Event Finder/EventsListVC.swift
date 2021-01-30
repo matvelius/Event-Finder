@@ -8,16 +8,7 @@
 import UIKit
 import Nuke
 
-class EventsListVC: UITableViewController, UISearchBarDelegate, UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        Events.filteredEvents = searchController.searchBar.text!.isEmpty ? Events.allEvents : Events.allEvents.filter { $0.shortTitle.contains(searchController.searchBar.text!) }
-        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
-    
+class EventsListVC: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,20 +35,7 @@ class EventsListVC: UITableViewController, UISearchBarDelegate, UISearchResultsU
         tableView.delegate = self
     }
     
-    func setUpSearchBar() {
-        Events.searchController = ({
-            let controller = UISearchController(searchResultsController: nil)
-            controller.searchResultsUpdater = self
-            controller.obscuresBackgroundDuringPresentation = false
-            controller.searchBar.sizeToFit()
-            
-            tableView.tableHeaderView = controller.searchBar
-            
-            return controller
-        })()
-    }
-    
-    
+    // MARK: UITableView setup
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -110,6 +88,30 @@ class EventsListVC: UITableViewController, UISearchBarDelegate, UISearchResultsU
         self.navigationController?.pushViewController(detailVC!, animated: true)
     }
     
+}
+
+// search functionality
+extension EventsListVC: UISearchBarDelegate, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        Events.filteredEvents = searchController.searchBar.text!.isEmpty ? Events.allEvents : Events.allEvents.filter { $0.shortTitle.contains(searchController.searchBar.text!) }
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func setUpSearchBar() {
+        Events.searchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.obscuresBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+            
+            tableView.tableHeaderView = controller.searchBar
+            
+            return controller
+        })()
+    }
 }
 
 

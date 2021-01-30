@@ -62,9 +62,7 @@ class EventDetailVC: UIViewController {
         favoriteButtonImageName = Events.isEventFavorite(event!.id) ? FavoriteImage.favorite : FavoriteImage.favoriteBlank
         favoriteButton.setImage(UIImage(named: favoriteButtonImageName.rawValue), for: .normal)
         
-        DispatchQueue.main.async {
-            Events.searchController.isActive = false
-        }
+        Events.searchController.isActive = false
     }
 }
 
