@@ -88,3 +88,32 @@ class DateTimeTests: XCTestCase {
     }
     
 }
+
+class TableViewTests: XCTestCase {
+    
+    var vc: EventsListVC!
+    
+    override func setUp() {
+        super.setUp()
+        
+        vc = EventsListVC()
+        _ = vc.view // this calls viewDidLoad()
+    }
+
+    func testEventListVCHasTable() {
+        XCTAssertNotNil(vc.tableView)
+    }
+    
+    func testEventListVCImplementsDataSource() {
+        XCTAssertNotNil(vc.tableView.dataSource)
+    }
+    
+    func testEventListVCImplementsDelegate() {
+        XCTAssertNotNil(vc.tableView.delegate)
+    }
+    
+    func testDataSourceAndDelegateAreSameInstance() {
+        XCTAssertEqual(vc.tableView.dataSource as! UITableViewController, vc.tableView.delegate as! UITableViewController)
+    }
+    
+}

@@ -15,26 +15,17 @@
 		BA6A784925BCFABA00E0D13F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6A784725BCFABA00E0D13F /* Main.storyboard */; };
 		BA6A784B25BCFABB00E0D13F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6A784A25BCFABB00E0D13F /* Assets.xcassets */; };
 		BA6A784E25BCFABB00E0D13F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6A784C25BCFABB00E0D13F /* LaunchScreen.storyboard */; };
-		BA6A785925BCFABB00E0D13F /* Event_FinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A785825BCFABB00E0D13F /* Event_FinderTests.swift */; };
-		BA6A786425BCFABB00E0D13F /* Event_FinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A786325BCFABB00E0D13F /* Event_FinderUITests.swift */; };
+		BA6A785925BCFABB00E0D13F /* EventFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A785825BCFABB00E0D13F /* EventFinderTests.swift */; };
 		BA6A787E25BCFDED00E0D13F /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A787D25BCFDED00E0D13F /* EventCell.swift */; };
 		BA6A788325BE387E00E0D13F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A788225BE387E00E0D13F /* Events.swift */; };
 		BA88D33E25C22DC0004BC60F /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88D33D25C22DC0004BC60F /* EventDetailVC.swift */; };
 		BAA2C42625C5D017000FAB93 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2C42525C5D017000FAB93 /* DateTime.swift */; };
 		BAEDA6CC25BFA20000EC1E5A /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6CB25BFA20000EC1E5A /* Networking.swift */; };
 		BAEDA6D125C0A92B00EC1E5A /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6D025C0A92B00EC1E5A /* Secrets.swift */; };
-		CC611FF3B23B75E46B6B0F0F /* Pods_Event_Finder_Event_FinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F08D2AA5BCB73C4E48F462 /* Pods_Event_Finder_Event_FinderUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		BA6A785525BCFABB00E0D13F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BA6A783625BCFABA00E0D13F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BA6A783D25BCFABA00E0D13F;
-			remoteInfo = "Event Finder";
-		};
-		BA6A786025BCFABB00E0D13F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BA6A783625BCFABA00E0D13F /* Project object */;
 			proxyType = 1;
@@ -63,11 +54,8 @@
 		BA6A784D25BCFABB00E0D13F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA6A784F25BCFABB00E0D13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA6A785425BCFABB00E0D13F /* Event FinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Event FinderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA6A785825BCFABB00E0D13F /* Event_FinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_FinderTests.swift; sourceTree = "<group>"; };
+		BA6A785825BCFABB00E0D13F /* EventFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFinderTests.swift; sourceTree = "<group>"; };
 		BA6A785A25BCFABB00E0D13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA6A785F25BCFABB00E0D13F /* Event FinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Event FinderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA6A786325BCFABB00E0D13F /* Event_FinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_FinderUITests.swift; sourceTree = "<group>"; };
-		BA6A786525BCFABB00E0D13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA6A787D25BCFDED00E0D13F /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		BA6A788225BE387E00E0D13F /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		BA88D33D25C22DC0004BC60F /* EventDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailVC.swift; sourceTree = "<group>"; };
@@ -89,14 +77,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C2ED8A16D6F611BADC12269 /* Pods_Event_FinderTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA6A785C25BCFABB00E0D13F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CC611FF3B23B75E46B6B0F0F /* Pods_Event_Finder_Event_FinderUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,8 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				BA6A784025BCFABA00E0D13F /* Event Finder */,
-				BA6A785725BCFABB00E0D13F /* Event FinderTests */,
-				BA6A786225BCFABB00E0D13F /* Event FinderUITests */,
+				BA6A785725BCFABB00E0D13F /* Event Finder Tests */,
 				BA6A783F25BCFABA00E0D13F /* Products */,
 				26DB0C1E69A64CF690C5C6C0 /* Pods */,
 				1295F6A5FA1D57B78CD7A38A /* Frameworks */,
@@ -143,7 +122,6 @@
 			children = (
 				BA6A783E25BCFABA00E0D13F /* Event Finder.app */,
 				BA6A785425BCFABB00E0D13F /* Event FinderTests.xctest */,
-				BA6A785F25BCFABB00E0D13F /* Event FinderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,22 +143,13 @@
 			path = "Event Finder";
 			sourceTree = "<group>";
 		};
-		BA6A785725BCFABB00E0D13F /* Event FinderTests */ = {
+		BA6A785725BCFABB00E0D13F /* Event Finder Tests */ = {
 			isa = PBXGroup;
 			children = (
-				BA6A785825BCFABB00E0D13F /* Event_FinderTests.swift */,
+				BA6A785825BCFABB00E0D13F /* EventFinderTests.swift */,
 				BA6A785A25BCFABB00E0D13F /* Info.plist */,
 			);
-			path = "Event FinderTests";
-			sourceTree = "<group>";
-		};
-		BA6A786225BCFABB00E0D13F /* Event FinderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BA6A786325BCFABB00E0D13F /* Event_FinderUITests.swift */,
-				BA6A786525BCFABB00E0D13F /* Info.plist */,
-			);
-			path = "Event FinderUITests";
+			path = "Event Finder Tests";
 			sourceTree = "<group>";
 		};
 		BA6AF55C25C3AF0100631B4E /* Model */ = {
@@ -252,26 +221,6 @@
 			productReference = BA6A785425BCFABB00E0D13F /* Event FinderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BA6A785E25BCFABB00E0D13F /* Event FinderUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BA6A786E25BCFABB00E0D13F /* Build configuration list for PBXNativeTarget "Event FinderUITests" */;
-			buildPhases = (
-				4DDA10E08775B903E93E27D4 /* [CP] Check Pods Manifest.lock */,
-				BA6A785B25BCFABB00E0D13F /* Sources */,
-				BA6A785C25BCFABB00E0D13F /* Frameworks */,
-				BA6A785D25BCFABB00E0D13F /* Resources */,
-				C9963E0ADA6637D0C5B4FF7D /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BA6A786125BCFABB00E0D13F /* PBXTargetDependency */,
-			);
-			name = "Event FinderUITests";
-			productName = "Event FinderUITests";
-			productReference = BA6A785F25BCFABB00E0D13F /* Event FinderUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -285,10 +234,6 @@
 						CreatedOnToolsVersion = 12.3;
 					};
 					BA6A785325BCFABB00E0D13F = {
-						CreatedOnToolsVersion = 12.3;
-						TestTargetID = BA6A783D25BCFABA00E0D13F;
-					};
-					BA6A785E25BCFABB00E0D13F = {
 						CreatedOnToolsVersion = 12.3;
 						TestTargetID = BA6A783D25BCFABA00E0D13F;
 					};
@@ -309,7 +254,6 @@
 			targets = (
 				BA6A783D25BCFABA00E0D13F /* Event Finder */,
 				BA6A785325BCFABB00E0D13F /* Event FinderTests */,
-				BA6A785E25BCFABB00E0D13F /* Event FinderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -332,38 +276,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA6A785D25BCFABB00E0D13F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4DDA10E08775B903E93E27D4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Event Finder-Event FinderUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A883C2E6EB2161E90993F9DA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,23 +299,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9963E0ADA6637D0C5B4FF7D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Event Finder-Event FinderUITests/Pods-Event Finder-Event FinderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Event Finder-Event FinderUITests/Pods-Event Finder-Event FinderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Event Finder-Event FinderUITests/Pods-Event Finder-Event FinderUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EBEEF03AD79EEBCDB7AE3946 /* [CP] Embed Pods Frameworks */ = {
@@ -454,9 +352,9 @@
 				BAA2C42625C5D017000FAB93 /* DateTime.swift in Sources */,
 				BAEDA6D125C0A92B00EC1E5A /* Secrets.swift in Sources */,
 				BA6A784225BCFABA00E0D13F /* AppDelegate.swift in Sources */,
+				BAEDA6CC25BFA20000EC1E5A /* Networking.swift in Sources */,
 				BA6A784425BCFABA00E0D13F /* SceneDelegate.swift in Sources */,
 				BA49E7FC25C2823F00DEBA6D /* FavoriteImageNames.swift in Sources */,
-				BAEDA6CC25BFA20000EC1E5A /* Networking.swift in Sources */,
 				BA6A788325BE387E00E0D13F /* Events.swift in Sources */,
 				BA88D33E25C22DC0004BC60F /* EventDetailVC.swift in Sources */,
 			);
@@ -466,15 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA6A785925BCFABB00E0D13F /* Event_FinderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA6A785B25BCFABB00E0D13F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BA6A786425BCFABB00E0D13F /* Event_FinderUITests.swift in Sources */,
+				BA6A785925BCFABB00E0D13F /* EventFinderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,11 +375,6 @@
 			isa = PBXTargetDependency;
 			target = BA6A783D25BCFABA00E0D13F /* Event Finder */;
 			targetProxy = BA6A785525BCFABB00E0D13F /* PBXContainerItemProxy */;
-		};
-		BA6A786125BCFABB00E0D13F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BA6A783D25BCFABA00E0D13F /* Event Finder */;
-			targetProxy = BA6A786025BCFABB00E0D13F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -717,48 +602,6 @@
 			};
 			name = Release;
 		};
-		BA6A786F25BCFABB00E0D13F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5BD0DD13515B9149CC3A4E34 /* Pods-Event Finder-Event FinderUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AN8H79QZL4;
-				INFOPLIST_FILE = "Event FinderUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.matveycodes.Event-FinderUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Event Finder";
-			};
-			name = Debug;
-		};
-		BA6A787025BCFABB00E0D13F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90AFB7DAAFDC917287625E70 /* Pods-Event Finder-Event FinderUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AN8H79QZL4;
-				INFOPLIST_FILE = "Event FinderUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.matveycodes.Event-FinderUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Event Finder";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -785,15 +628,6 @@
 			buildConfigurations = (
 				BA6A786C25BCFABB00E0D13F /* Debug */,
 				BA6A786D25BCFABB00E0D13F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BA6A786E25BCFABB00E0D13F /* Build configuration list for PBXNativeTarget "Event FinderUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BA6A786F25BCFABB00E0D13F /* Debug */,
-				BA6A787025BCFABB00E0D13F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
