@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import Nuke
 
-class EventsListVC: UITableViewController{
+class EventsListVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,26 +52,8 @@ class EventsListVC: UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let currentEvent = Events.searchController.isActive ? Events.filteredEvents[indexPath.item] : Events.allEvents[indexPath.item]
-        let imageURL = URL(string: currentEvent.performers[0].image)
-        
-        // configure cell
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "eventCell") as! EventCell
-        Nuke.loadImage(with: imageURL!, into: cell.eventImage)
-        cell.title.text = currentEvent.shortTitle
-        cell.location.text = currentEvent.venue.displayLocation
-        cell.date.text = getDate(from: currentEvent.datetimeUTC) ?? "n/a"
-        cell.time.text = getLocalTime(from: currentEvent.datetimeUTC) ?? "n/a"
-        
-        // favorite icon
-        if Events.isEventFavorite(currentEvent.id) {
-            cell.favoriteIcon.image = UIImage(named: FavoriteImage.favorite.rawValue)
-        } else {
-            cell.favoriteIcon.image = nil
-        }
-        
-        return cell
+        return configureCell(cell, for: indexPath.item)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -82,7 +63,6 @@ class EventsListVC: UITableViewController{
         let currentEvent = Events.searchController.isActive ? Events.filteredEvents[indexPath.row] : Events.allEvents[indexPath.row]
 
         detailVC?.event = currentEvent
-        
         detailVC?.eventTitle = currentEvent.shortTitle
                 
         self.navigationController?.pushViewController(detailVC!, animated: true)
@@ -111,35 +91,5 @@ extension EventsListVC: UISearchBarDelegate, UISearchResultsUpdating {
             
             return controller
         })()
-    }
-}
-
-
-extension EventsListVC {
-    
-    func getDate(from dateTimeString: String) -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        
-        guard let date = dateFormatter.date(from: dateTimeString) else { return nil }
-        
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "EEEE, dd MMM YYYY"
-        
-        return dateFormatter.string(from: date)
-    }
-    
-    func getLocalTime(from dateTimeString: String) -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        
-        guard let date = dateFormatter.date(from: dateTimeString) else { return nil }
-        
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "h:mm a"
-        
-        return dateFormatter.string(from: date)
     }
 }

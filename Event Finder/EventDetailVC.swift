@@ -9,7 +9,6 @@ import UIKit
 import Nuke
 
 class EventDetailVC: UIViewController {
-    
 
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
@@ -56,7 +55,7 @@ class EventDetailVC: UIViewController {
         }
         
         eventTitleLabel.text = event!.shortTitle
-        eventDateTimeLabel.text = getLocalDateTime(from: event!.datetimeUTC) ?? "n/a"
+        eventDateTimeLabel.text = DateTime.getLocalDateTime(from: event!.datetimeUTC) ?? "n/a"
         eventLocationLabel.text = event!.venue.displayLocation
         
         favoriteButtonImageName = Events.isEventFavorite(event!.id) ? FavoriteImage.favorite : FavoriteImage.favoriteBlank
@@ -64,21 +63,4 @@ class EventDetailVC: UIViewController {
         
         Events.searchController.isActive = false
     }
-}
-
-extension EventDetailVC {
-    
-    func getLocalDateTime(from dateTimeString: String) -> String? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        
-        guard let date = dateFormatter.date(from: dateTimeString) else { return nil }
-        
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "EEEE, dd MMM YYYY @ h:mm a"
-        
-        return dateFormatter.string(from: date)
-    }
-    
 }

@@ -6,6 +6,7 @@
 //
 
 import XCTest
+
 @testable import Event_Finder
 
 class NetworkTests: XCTestCase {
@@ -68,6 +69,22 @@ class FavoriteEventTests: XCTestCase {
         Events.removeEventFromFavorites(eventID: unlikelyEventID)
         
         XCTAssertFalse(Events.isEventFavorite(unlikelyEventID))
+    }
+    
+}
+
+class DateTimeTests: XCTestCase {
+    
+    func testGetDate() {
+        XCTAssertEqual("Saturday, 30 Jan 2021", DateTime.getDate(from: "2021-01-30T09:30:00"))
+    }
+    
+    func testGetLocalTime() {
+        XCTAssertEqual("3:30 AM", DateTime.getLocalTime(from: "2021-01-30T09:30:00"))
+    }
+    
+    func testGetLocalDateTime() {
+        XCTAssertEqual("Saturday, 30 Jan 2021 @ 3:30 AM", DateTime.getLocalDateTime(from: "2021-01-30T09:30:00"))
     }
     
 }

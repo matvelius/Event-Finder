@@ -8,13 +8,14 @@
 import UIKit
 
 struct Events {
+    // store all events
     static var allEvents = [Event]()
     
-    // for searching:
+    // searching:
     static var filteredEvents = [Event]()
     static var searchController = UISearchController()
     
-    // for keeping track of favorites:
+    // keeping track of favorites:
     static func isEventFavorite(_ eventID: Int) -> Bool {
         let defaults = UserDefaults.standard
         
