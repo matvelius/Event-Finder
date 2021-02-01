@@ -19,9 +19,7 @@ class NetworkTests: XCTestCase {
     func testAPICallReturnsData() {
         let exp = expectation(description: "download data from SeatGeek API")
         
-        guard let url = URL(string: "https://api.seatgeek.com/2/events?client_id=\(Secrets.CLIENT_ID)&client_secret=\(Secrets.CLIENT_SECRET)") else {
-            return
-        }
+        guard let url = URL(string: Secrets.URL) else { return }
 
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {

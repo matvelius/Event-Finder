@@ -15,11 +15,11 @@
 		BA6A784925BCFABA00E0D13F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6A784725BCFABA00E0D13F /* Main.storyboard */; };
 		BA6A784B25BCFABB00E0D13F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6A784A25BCFABB00E0D13F /* Assets.xcassets */; };
 		BA6A784E25BCFABB00E0D13F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6A784C25BCFABB00E0D13F /* LaunchScreen.storyboard */; };
-		BA6A785925BCFABB00E0D13F /* EventFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A785825BCFABB00E0D13F /* EventFinderTests.swift */; };
 		BA6A787E25BCFDED00E0D13F /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A787D25BCFDED00E0D13F /* EventCell.swift */; };
 		BA6A788325BE387E00E0D13F /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A788225BE387E00E0D13F /* Events.swift */; };
 		BA88D33E25C22DC0004BC60F /* EventDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88D33D25C22DC0004BC60F /* EventDetailVC.swift */; };
 		BAA2C42625C5D017000FAB93 /* DateTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA2C42525C5D017000FAB93 /* DateTime.swift */; };
+		BAA2C4B925C74BFF000FAB93 /* EventFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A785825BCFABB00E0D13F /* EventFinderTests.swift */; };
 		BAEDA6CC25BFA20000EC1E5A /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6CB25BFA20000EC1E5A /* Networking.swift */; };
 		BAEDA6D125C0A92B00EC1E5A /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6D025C0A92B00EC1E5A /* Secrets.swift */; };
 /* End PBXBuildFile section */
@@ -364,7 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA6A785925BCFABB00E0D13F /* EventFinderTests.swift in Sources */,
+				BAA2C4B925C74BFF000FAB93 /* EventFinderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@ class EventsListVC: UITableViewController {
         
         setTableDataSourceAndDelegate()
         
-        self.fetchData(from: "https://api.seatgeek.com/2/events?client_id=\(Secrets.CLIENT_ID)&client_secret=\(Secrets.CLIENT_SECRET)", completion: { result in
+        self.fetchData(from: Secrets.URL, completion: { result in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

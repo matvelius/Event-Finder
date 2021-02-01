@@ -42,7 +42,7 @@ extension EventsListVC {
                 // unknown error
                 completion(.failure(.unknown))
                 self.showAlert(with: "Uknown error.")
-                }
+            }
 
         }.resume()
     }
