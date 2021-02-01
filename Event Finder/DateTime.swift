@@ -5,7 +5,7 @@
 //  Created by Matvey Kostukovsky on 1/30/21.
 //
 
-import Foundation
+import UIKit
 
 struct DateTime {
     static func getDate(from dateTimeString: String) -> String? {
@@ -44,5 +44,14 @@ struct DateTime {
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         
         return dateFormatter
+    }
+}
+
+
+extension NSLayoutConstraint {
+
+    override public var description: String {
+        let id = identifier ?? ""
+        return "id: \(id), constant: \(constant)" //you may print whatever you want here
     }
 }

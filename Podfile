@@ -14,8 +14,4 @@ target 'Event Finder' do
     # Pods for testing
   end
 
-  target 'Event FinderUITests' do
-    # Pods for testing
-  end
-
 end

@@ -14,6 +14,7 @@ class EventsListVC: UITableViewController {
         
         setTableDataSourceAndDelegate()
         
+        
         self.fetchData(from: Secrets.URL, completion: { result in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
