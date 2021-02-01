@@ -65,7 +65,7 @@
 		1AEAA810720E9C527DA6409A6EAEFF38 /* Nuke-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nuke-dummy.m"; sourceTree = "<group>"; };
 		1EF1F56066CB8A058769F15400E21BF9 /* Pods-Event FinderTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Event FinderTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2C18FE58E60CA23AD45F9237CE576133 /* ImageViewExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageViewExtensions.swift; path = Sources/ImageViewExtensions.swift; sourceTree = "<group>"; };
-		2DAD7D76FC007F48AE48F2FD15BF01BB /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DAD7D76FC007F48AE48F2FD15BF01BB /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nuke.framework; path = "/Users/matvey/Dev/Event Finder/Pods/../build/Debug-iphoneos/Nuke/Nuke.framework"; sourceTree = "<absolute>"; };
 		358398E5E0ADCECF7E0FB34FA1135EF2 /* Nuke-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nuke-prefix.pch"; sourceTree = "<group>"; };
 		3CE4D1F7C0FC24A0CF7F719E0ADD0C36 /* ImageProcessing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageProcessing.swift; path = Sources/ImageProcessing.swift; sourceTree = "<group>"; };
 		44AEFE344E567DFDA0022830792F96D6 /* ImagePipeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePipeline.swift; path = Sources/ImagePipeline.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		7068CF6E127D9EC09FF440C5D2B1C508 /* Pods-Event FinderTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Event FinderTests.modulemap"; sourceTree = "<group>"; };
 		73BFEFF9A73D55D2BA7074FD6678C1D6 /* Pods-Event FinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event FinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7585A675C28B8568E63B8C340BB2FC55 /* Pods-Event FinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event FinderTests.release.xcconfig"; sourceTree = "<group>"; };
-		7688140A7617A6C66CD6390047672C2C /* Pods_Event_Finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_Finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7688140A7617A6C66CD6390047672C2C /* Pods_Event_Finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Event_Finder.framework; path = "/Users/matvey/Dev/Event Finder/Pods/../build/Debug-iphoneos/Pods_Event_Finder.framework"; sourceTree = "<absolute>"; };
 		7D9027317E86259E0E5353A8D3DF7B11 /* DataLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataLoader.swift; path = Sources/DataLoader.swift; sourceTree = "<group>"; };
 		833956204D4FEE291AAC46364B0A3D6E /* Pods-Event Finder-Event FinderUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Event Finder-Event FinderUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9014C3287F1B4F249FE5060306157CB3 /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = Sources/Deprecated.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		BDA28A66762927DE5F0BBBC3ECAF6C86 /* Pods-Event FinderTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Event FinderTests-umbrella.h"; sourceTree = "<group>"; };
 		BEC32842AB81DF20A8432E3303430353 /* Pods-Event Finder-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Event Finder-frameworks.sh"; sourceTree = "<group>"; };
 		C5834E616449D86CA384225252EEC7AC /* Pods-Event Finder-Event FinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Event Finder-Event FinderUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C5E26BEEE02D8E1F0BFEB33D31A8A78A /* Pods_Event_FinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_FinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5E26BEEE02D8E1F0BFEB33D31A8A78A /* Pods_Event_FinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Event_FinderTests.framework; path = "/Users/matvey/Dev/Event Finder/Pods/../build/Debug-iphoneos/Pods_Event_FinderTests.framework"; sourceTree = "<absolute>"; };
 		CE98A2FB397D71DCD3249171DA1A625C /* Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Internal.swift; path = Sources/Internal.swift; sourceTree = "<group>"; };
 		CF21CFD47433E9F603B063B8B88A62ED /* Pods-Event Finder-Event FinderUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Event Finder-Event FinderUITests-umbrella.h"; sourceTree = "<group>"; };
 		D14EDC75533C3B8BE419B7BF06694622 /* ImageTask.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageTask.swift; path = Sources/ImageTask.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 		DD65A8066D9920C0F4D80A0845F9B894 /* Nuke-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Nuke-Info.plist"; sourceTree = "<group>"; };
 		F3408966546183FC993429CEC2F9D04F /* Pods-Event Finder-Event FinderUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Event Finder-Event FinderUITests.modulemap"; sourceTree = "<group>"; };
 		F45A05FECEC145B123B69397390B34B7 /* DataCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataCache.swift; path = Sources/DataCache.swift; sourceTree = "<group>"; };
-		F603C977DC5DE4557F5EC40CE27C00D9 /* Pods_Event_Finder_Event_FinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_Finder_Event_FinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F603C977DC5DE4557F5EC40CE27C00D9 /* Pods_Event_Finder_Event_FinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Event_Finder_Event_FinderUITests.framework; path = "/Users/matvey/Dev/Event Finder/Pods/../build/Debug-iphoneos/Pods_Event_Finder_Event_FinderUITests.framework"; sourceTree = "<absolute>"; };
 		FD2A2C875DD11B9AB2E396694A89CD39 /* Pods-Event Finder-Event FinderUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Event Finder-Event FinderUITests-frameworks.sh"; sourceTree = "<group>"; };
 		FFFEB262F8ED21CF98A65C8558E84E03 /* ImageRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageRequest.swift; path = Sources/ImageRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,17 +144,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		125471AAD8587EC15D1914D6CB173E0B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2DAD7D76FC007F48AE48F2FD15BF01BB /* Nuke.framework */,
-				7688140A7617A6C66CD6390047672C2C /* Pods_Event_Finder.framework */,
-				F603C977DC5DE4557F5EC40CE27C00D9 /* Pods_Event_Finder_Event_FinderUITests.framework */,
-				C5E26BEEE02D8E1F0BFEB33D31A8A78A /* Pods_Event_FinderTests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2455AC57533DA9B6FEE190E58A2ED10C /* Nuke */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,7 +245,6 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				C763A4CF8B98BA319553D5BBCF10B060 /* Pods */,
-				125471AAD8587EC15D1914D6CB173E0B /* Products */,
 				FCCEA439D05B34B807FF64AD06F7C9D7 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -402,7 +390,7 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 125471AAD8587EC15D1914D6CB173E0B /* Products */;
+			productRefGroup = CF1408CF629C7361332E53B88F7BD30C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
