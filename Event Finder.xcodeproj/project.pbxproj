@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C2ED8A16D6F611BADC12269 /* Pods_Event_FinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D70E5AD127905B1EF02A4BC /* Pods_Event_FinderTests.framework */; };
 		BA49E7FC25C2823F00DEBA6D /* FavoriteImageNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA49E7FB25C2823F00DEBA6D /* FavoriteImageNames.swift */; };
 		BA6A784225BCFABA00E0D13F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A784125BCFABA00E0D13F /* AppDelegate.swift */; };
 		BA6A784425BCFABA00E0D13F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6A784325BCFABA00E0D13F /* SceneDelegate.swift */; };
@@ -39,9 +38,6 @@
 		1EFBBBE5F7BB0BDDA3A60C0F /* Pods-Event FinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event FinderTests.debug.xcconfig"; path = "Target Support Files/Pods-Event FinderTests/Pods-Event FinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5370EBD4B8ED20E2DC74C022 /* Pods-Event Finder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event Finder.debug.xcconfig"; path = "Target Support Files/Pods-Event Finder/Pods-Event Finder.debug.xcconfig"; sourceTree = "<group>"; };
 		53D86169C66457BE5733FF2E /* Pods-Event Finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event Finder.release.xcconfig"; path = "Target Support Files/Pods-Event Finder/Pods-Event Finder.release.xcconfig"; sourceTree = "<group>"; };
-		67431BF60613894358C4879B /* Pods_Event_Finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_Finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		81F08D2AA5BCB73C4E48F462 /* Pods_Event_Finder_Event_FinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_Finder_Event_FinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D70E5AD127905B1EF02A4BC /* Pods_Event_FinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_FinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA49E7FB25C2823F00DEBA6D /* FavoriteImageNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteImageNames.swift; sourceTree = "<group>"; };
 		BA6A783E25BCFABA00E0D13F /* Event Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Event Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6A784125BCFABA00E0D13F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C2ED8A16D6F611BADC12269 /* Pods_Event_FinderTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,9 +79,6 @@
 		1295F6A5FA1D57B78CD7A38A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				67431BF60613894358C4879B /* Pods_Event_Finder.framework */,
-				81F08D2AA5BCB73C4E48F462 /* Pods_Event_Finder_Event_FinderUITests.framework */,
-				8D70E5AD127905B1EF02A4BC /* Pods_Event_FinderTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
