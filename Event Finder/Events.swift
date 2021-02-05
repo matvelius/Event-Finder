@@ -12,7 +12,7 @@ struct Events {
     static var allEvents = [Event]()
     
     // searching:
-    static var filteredEvents = [Event]()
+    static var searchedEvents = [Event]()
     static var searchController = UISearchController()
     
     // keeping track of favorites:

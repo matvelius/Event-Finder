@@ -19,7 +19,7 @@ class EventCell: UITableViewCell {
 
 extension EventsListVC {
     func configureCell(_ cell: EventCell, for index: Int) -> EventCell {
-        let currentEvent = Events.searchController.isActive ? Events.filteredEvents[index] : Events.allEvents[index]
+        let currentEvent = Events.searchController.isActive && Events.searchedEvents.count > 0 ? Events.searchedEvents[index] : Events.allEvents[index]
         let imageURL = URL(string: currentEvent.performers[0].image)
         
         Nuke.loadImage(with: imageURL!, into: cell.eventImage)

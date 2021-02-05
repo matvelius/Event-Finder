@@ -12,9 +12,9 @@
         <!--Event Finder-->
         <scene sceneID="olw-7r-ylb">
             <objects>
-                <tableViewController id="AU4-Ae-vHa" customClass="EventsListVC" customModule="Event_Finder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="AU4-Ae-vHa" customClass="EventsListVC" customModule="Event_Finder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7bp-xD-Ysh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -142,9 +142,11 @@
                             <outlet property="delegate" destination="AU4-Ae-vHa" id="IZf-25-JKt"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Event Finder" id="CKO-uH-8dj">
                         <barButtonItem key="backBarButtonItem" title="Back" id="fCI-R9-YrH"/>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyY-3l-N7w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

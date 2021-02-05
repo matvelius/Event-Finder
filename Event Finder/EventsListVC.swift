@@ -9,13 +9,14 @@ import UIKit
 
 class EventsListVC: UITableViewController {
     
+    var searchTask: DispatchWorkItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         setTableDataSourceAndDelegate()
         
-        
-        self.fetchData(from: Secrets.URL, completion: { result in
+        self.fetchData(query: nil, completion: { result in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -46,7 +47,7 @@ class EventsListVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (Events.searchController.isActive) {
-            return Events.filteredEvents.count
+            return Events.searchedEvents.count
         } else {
             return Events.allEvents.count
         }
@@ -61,7 +62,7 @@ class EventsListVC: UITableViewController {
         
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "EventDetailVC") as? EventDetailVC
         
-        let currentEvent = Events.searchController.isActive ? Events.filteredEvents[indexPath.row] : Events.allEvents[indexPath.row]
+        let currentEvent = Events.searchController.isActive ? Events.searchedEvents[indexPath.row] : Events.allEvents[indexPath.row]
 
         detailVC?.event = currentEvent
         detailVC?.eventTitle = currentEvent.shortTitle
@@ -73,12 +74,24 @@ class EventsListVC: UITableViewController {
 
 // search functionality
 extension EventsListVC: UISearchBarDelegate, UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
-        Events.filteredEvents = searchController.searchBar.text!.isEmpty ? Events.allEvents : Events.allEvents.filter { $0.shortTitle.contains(searchController.searchBar.text!) }
         
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+        self.searchTask?.cancel()
+        
+        let task = DispatchWorkItem { [weak self] in
+            self?.fetchData(query: searchController.searchBar.text, completion: { _ in
+                DispatchQueue.main.async {
+                    Events.searchedEvents = searchController.searchBar.text!.isEmpty ? Events.allEvents : Events.searchedEvents
+                    self?.tableView.reloadData()
+                }
+            })
         }
+        
+        self.searchTask = task
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2, execute: task)
+        
     }
     
     func setUpSearchBar() {

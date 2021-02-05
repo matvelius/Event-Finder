@@ -9,7 +9,17 @@ import UIKit
 
 extension EventsListVC {
     
-    func fetchData(from urlString: String, completion: @escaping (Result<String, NetworkError>) -> Void) {
+    func fetchData(query: String?, completion: @escaping (Result<String, NetworkError>) -> Void) {
+        
+        var urlString = ""
+        
+        if query != nil && query != "" {
+            urlString =  "https://api.seatgeek.com/2/events?q=\(query!)&client_id=\(Secrets.CLIENT_ID)&client_secret=\(Secrets.CLIENT_SECRET)"
+        } else {
+            urlString = "https://api.seatgeek.com/2/events?client_id=\(Secrets.CLIENT_ID)&client_secret=\(Secrets.CLIENT_SECRET)"
+        }
+        
+        
         // check the URL is good, otherwise return failure
         guard let url = URL(string: urlString) else {
             completion(.failure(.badURL))
@@ -31,7 +41,11 @@ extension EventsListVC {
                 let stringData = String(decoding: data, as: UTF8.self)
                 let rawResponse: RawResponse = try! JSONDecoder().decode(RawResponse.self, from: stringData.data(using: .utf8)!)
                 
-                Events.allEvents = rawResponse.events
+                if query != nil && query != "" {
+                    Events.searchedEvents = rawResponse.events
+                } else {
+                    Events.allEvents = rawResponse.events
+                }
                 
                 completion(.success("success"))
             } else if error != nil {
