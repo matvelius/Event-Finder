@@ -39,15 +39,19 @@ extension EventsListVC {
             if let data = data {
                 // success: convert the data to a string and send it back
                 let stringData = String(decoding: data, as: UTF8.self)
-                let rawResponse: RawResponse = try! JSONDecoder().decode(RawResponse.self, from: stringData.data(using: .utf8)!)
-                
-                if query != nil && query != "" {
-                    Events.searchedEvents = rawResponse.events
+                if let rawResponse: RawResponse = try? JSONDecoder().decode(RawResponse.self, from: stringData.data(using: .utf8)!) {
+                    if query != nil && query != "" {
+                        Events.searchedEvents = rawResponse.events
+                    } else {
+                        Events.allEvents = rawResponse.events
+                    }
+                    
+                    completion(.success("success"))
                 } else {
-                    Events.allEvents = rawResponse.events
+                    completion(.failure(.unknown))
                 }
                 
-                completion(.success("success"))
+                
             } else if error != nil {
                 // some kind of a network failure
                 completion(.failure(.requestFailed))
